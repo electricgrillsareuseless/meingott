@@ -43,7 +43,7 @@ public class RequestHandler {
         String data = new Gson().toJson(openAIRequest);
 
         try (CloseableHttpClient httpClient = HttpClientBuilder.create().build()) {
-            HttpPost request = new HttpPost("https://api.openai.com/v1/completions");
+            HttpPost request = new HttpPost("https://api.pawan.krd/v1/completions");
             StringEntity params = new StringEntity(data, "UTF-8");
             request.addHeader("Content-Type", "application/json");
             request.addHeader("Authorization", "Bearer " + AIMobsConfig.config.apiKey);
